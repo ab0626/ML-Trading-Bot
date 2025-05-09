@@ -1,19 +1,26 @@
-Startup 🚀
-Create a virtual environment conda create -n trader python=3.10
-Activate it conda activate trader
-Install initial deps pip install lumibot timedelta alpaca-trade-api==3.1.1
-Install transformers and friends pip install torch torchvision torchaudio transformers
-Update the API_KEY and API_SECRET with values from your Alpaca account
-Run the bot python tradingbot.py
-N.B. Torch installation instructions will vary depending on your operating system and hardware. See here for more: PyTorch Installation Instructions
+ML-Based Trading Bot 🤖📈
+This project is an algorithmic trading bot built using the Lumibot library and Alpaca's trading API. It leverages machine learning for sentiment analysis and backtesting capabilities to optimize trading strategies.
 
-If you're getting an SSL error when you attempt to call out to the Alpaca Trading api, you'll need to install the required SSL certificates into your machine.
+Features
+Broker Integration: Uses Alpaca for live trading and paper trading.
+Backtesting: Supports historical data backtesting with Yahoo Finance.
+Sentiment Analysis: Incorporates FinBERT for estimating market sentiment from news headlines.
+Customizable Strategies: Easily modify trading logic and parameters.
+Bracket Orders: Implements take-profit and stop-loss mechanisms for risk management.
 
-Download the following intermediate SSL Certificates, these are required to communicate with Alpaca
-https://letsencrypt.org/certs/lets-encrypt-r3.pem
-https://letsencrypt.org/certs/isrg-root-x1-cross-signed.pem
-Once downloaded, change the file extension of each file to .cer
-Double click the file and run through the wizard to install it, use all of the default selections.
+Setup
+1) Create a virtual environment:
+conda create -n trader python=3.10
+conda activate trader
 
-# Other References 🔗
--Lumibot:trading bot library, makes lifecycle stuff easier .
+2) Install dependencies:
+pip install lumibot timedelta alpaca-trade-api==3.1.1
+pip install torch torchvision torchaudio transformers
+
+3) Update API_KEY and API_SECRET in tradingbot.py with your Alpaca credentials.
+4) Run the bot:
+   python tradingbot.py
+
+Notes
+Could you ensure proper SSL certificates are installed for Alpaca API communication?
+Refer to the PyTorch Installation Instructions for hardware-specific setup.
